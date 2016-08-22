@@ -6,4 +6,4 @@ int     ft_strlen(const char *s)
     while(s[c])
         c++;
     return (c);
-}
+} 

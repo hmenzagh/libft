@@ -1,6 +1,4 @@
-#include	"libft.h"
-
-char		*ft_strmap(char const *s,char (*f)(char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 {
 	char	*ns;
 	int		i;
@@ -10,7 +8,7 @@ char		*ft_strmap(char const *s,char (*f)(char))
 		return (NULL);
 	while(s[i])
 	{
-		ns[i] = (*f)(s[i]);
+		ns[i] = (*f)(i, s[i]);
 		++i;
 	}
 	return (ns);
