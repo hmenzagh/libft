@@ -1,4 +1,6 @@
-char		*ft_strncyp(char *dst, const char *src, size_t len)
+# include <stddef.h>
+
+char		*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	int		i; 
 

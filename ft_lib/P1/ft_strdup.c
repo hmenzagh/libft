@@ -1,4 +1,6 @@
-char    *strdup(const char *s1)
+# include <stdlib.h>
+
+char    *ft_strdup(const char *s1)
 {
     int c;
     char *cp;

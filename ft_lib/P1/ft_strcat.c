@@ -12,6 +12,6 @@ char        *ft_strcat(char *restrict s1, const char *restrict s2)
         s1[c + i] = s2[i];
         ++i;
     }
-    s1[c + i] = '\0'
+    s1[c + i] = '\0';
     return (s1);
 }
