@@ -41,4 +41,13 @@ char	*ft_strrchr(const char *s, int c);
 void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,
 			size_t n);
 
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void	ft_strclr(char *s);
+void	ft_strdel(char **as);
+void	ft_striter(char *s, void (*f)(char*));
+void 	ft_striteri(char *s,void (*f)(unsigned int, char*));
+char	*ft_strmap(char const *s,char (*f)(char));
+
 #endif
