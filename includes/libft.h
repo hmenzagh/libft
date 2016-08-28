@@ -3,6 +3,7 @@
 
 # include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct		s_list
 {
@@ -59,5 +60,5 @@ void	ft_putchar(char c);
 void	ft_putstr(char const *s);
 void	ft_putendl(char const *s);
 char	*ft_itoa(int n);
-
+void	ft_putnbr(int n);
 #endif 
