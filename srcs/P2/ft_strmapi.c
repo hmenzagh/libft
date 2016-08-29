@@ -1,4 +1,6 @@
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+#include	"libft.h"
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*ns;
 	int		i;

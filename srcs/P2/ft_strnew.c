@@ -2,11 +2,13 @@
 
 char		*ft_strnew(size_t size)
 {
-	char	*chaine; 
+	char	*chaine;
+	int		s;
 
+	s = size;
 	if(!(chaine = malloc(size)))
 		return (NULL);
-	while(--size >= 0)
-		chaine[size] = '\0';
+	while(--s >= 0)
+		chaine[s] = '\0';
 	return (chaine);
 }

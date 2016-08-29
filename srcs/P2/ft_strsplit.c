@@ -6,7 +6,7 @@ char		**ft_strsplit(char const *s, char c)
 	char	**tab;
 
 	len_s = 0;
-	space_check_s = 1;
+	space_check = 1;
 	n_words_s = 0;
 	while(s[len_s])
 	{

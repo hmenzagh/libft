@@ -12,10 +12,10 @@ typedef struct		s_list
       struct s_list	*next;
 }					t_list;
 
-# define 	n_words cpv[0]
+# define 	n_words_s cpv[0]
 # define 	space_check cpv[1]
-# define 	len cpv[2]
-# define 	save cpv[3]
+# define 	len_s cpv[2]
+# define 	save_s cpv[3]
 
 void	ft_bzero(void *s, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
