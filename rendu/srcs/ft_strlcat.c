@@ -15,7 +15,7 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 	save_2 = ft_strlen(src);
 	save = j;
 	len = 0;
-	while (src[len] && (len + save_1) < size - 1)
+	while (src[len] && (len + save_1) < (int)size - 1)
 	{
 		dst[j] = src[len];
 		++j;
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size)
 	}
 	if (j != save)
 		dst[j] = '\0';
-	if (save_1 > size)
+	if (save_1 > (int)size)
 		return (save_2 + size);
 	return (save_1 + save_2);
 }

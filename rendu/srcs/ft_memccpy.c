@@ -5,7 +5,7 @@ void		*ft_memccpy(void *restrict dst, const void *restrict src, int c,
 {
 	char	*dst_c;
 	char	*src_c;
-	int		i;
+	size_t	i;
 
 	dst_c = (char*)dst;
 	src_c = (char*)src;

@@ -1,9 +1,9 @@
 #include	"libft.h"
 
-char		*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
+char		   *ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 {
-    int     c;
-    int     i;
+    size_t    c;
+    size_t    i;
 
     c = 0;
     i = 0;
