@@ -2,11 +2,19 @@
 
 void	ft_putnbr(int n)
 {
-	if(n >= 10)
+	long x;
+
+	x = n;
+	if (n < 0)
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		ft_putchar('-');
+		x = -x;
 	}
-	if(n < 10)
-		ft_putchar(n + '0');
+	if (x >= 10)
+	{
+		ft_putnbr(x / 10);
+		ft_putnbr(x % 10);
+	}
+	else
+		ft_putchar(x + '0');
 }

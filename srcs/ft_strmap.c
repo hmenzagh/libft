@@ -1,17 +1,18 @@
 #include	"libft.h"
 
-char		*ft_strmap(char const *s,char (*f)(char))
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char	*ns;
-	int		i;
+	char			*new;
+	unsigned int	i;
 
-	i = 0;
-	if(!(ns = ft_memalloc(ft_strlen(s))))
+	new = ft_strnew(ft_strlen(s));
+	if (new == NULL)
 		return (NULL);
-	while(s[i])
+	i = 0;
+	while (s[i] != '\0')
 	{
-		ns[i] = (*f)(s[i]);
-		++i;
+		new[i] = (*f)(s[i]);
+		i++;
 	}
-	return (ns);
+	return (new);
 }

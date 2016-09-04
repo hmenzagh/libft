@@ -6,7 +6,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 
 	i = 0;
-	if(!(ns = ft_memalloc(ft_strlen(s))))
+	if(!(ns = ft_strnew(ft_strlen(s))))
 		return (NULL);
 	while(s[i])
 	{

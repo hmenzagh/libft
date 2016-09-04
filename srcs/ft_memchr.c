@@ -3,9 +3,7 @@
 void		*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*s_c;
-
-    if (s == NULL)
-        return (NULL);
+	
 	s_c = (unsigned char*)s;
     while (n > 0 && *s_c != (unsigned char)c)
     {

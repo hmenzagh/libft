@@ -3,16 +3,23 @@
 void		ft_putnbr_fd(int n, int fd)
 {
 	char	c;
+	long	x; 
 
-	c = 0;
-	if(n >= 10)
+	x = n;
+	if(n < 0)
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
+		write(fd, "-", 1);
+		x = -x;
 	}
-	if(n < 10)
+	c = 0;
+	if(x >= 10)
 	{
-		c = (n + '0');
+		ft_putnbr_fd(x / 10, fd);
+		ft_putnbr_fd(x % 10, fd);
+	}
+	if(x < 10)
+	{
+		c = (x + '0');
 		write(fd, &c, 1);
 	}
 }
