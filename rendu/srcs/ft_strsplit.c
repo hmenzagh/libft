@@ -5,25 +5,25 @@ char		**ft_strsplit(char const *s, char c)
 	int		cpv[4];
 	char	**tab;
 
-	len_s = 0;
-	space_check = 1;
-	n_words_s = 0;
-	while(s[len_s])
+	LEN_S = 0;
+	SPACE_CHECK = 1;
+	N_WORDS_S = 0;
+	while(s[LEN_S])
 	{
-		n_words_s = (s[len_s] != c && space_check) ? n_words_s + 1 : n_words_s;
-		space_check = ((s[len_s++] == c) ? 1 : 0);	
+		N_WORDS_S = (s[LEN_S] != c && SPACE_CHECK) ? N_WORDS_S + 1 : N_WORDS_S;
+		SPACE_CHECK = ((s[LEN_S++] == c) ? 1 : 0);	
 	}
-	if(!(tab = malloc (sizeof(char*) * (n_words_s + 1))))
+	if(!(tab = malloc (sizeof(char*) * (N_WORDS_S + 1))))
 		return (NULL);
-	tab[n_words_s] = NULL;
-	while (len_s-- >= 0)
+	tab[N_WORDS_S] = NULL;
+	while (LEN_S-- >= 0)
 	{
-		if(s[len_s] != c)
+		if(s[LEN_S] != c)
 		{
-			save_s = len_s;
-			while(s[len_s] != c && len_s != -1)
-				--len_s;
-			tab[--n_words_s] = ft_strsub(s, len_s + 1, save_s - len_s);
+			SAVE_S = LEN_S;
+			while(s[LEN_S] != c && LEN_S != -1)
+				--LEN_S;
+			tab[--N_WORDS_S] = ft_strsub(s, LEN_S + 1, SAVE_S - LEN_S);
 		}
 	}
 	return (tab);
