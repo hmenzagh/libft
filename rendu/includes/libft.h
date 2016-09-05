@@ -12,6 +12,7 @@ typedef struct		s_list
 	int				content_size;
 	struct	s_list	*next;
 }					t_list;
+
 /* - Struct Lst Doublement Chaines Circulaires - */
 typedef struct		s_clist
 {
@@ -20,8 +21,6 @@ typedef struct		s_clist
 	struct	s_clist	*prev;
 	struct	s_clist	*next;
 }					t_clist;
-
-
 
 /* ~~~ Gestion de Nombres ~~~~~~~~~~~~~~~~~~~~~~ */
 int		ft_atoi(const char *str);
