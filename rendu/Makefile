@@ -77,7 +77,8 @@ SRCS_LIB	=		$(DIR_SRC)ft_bzero.c					\
 					$(DIR_SRC)ft_clstaddfront.c				\
 					$(DIR_SRC)ft_clstdel.c					\
 					$(DIR_SRC)ft_clstdelone.c				\
-					$(DIR_SRC)ft_clstiter.c
+					$(DIR_SRC)ft_clstiter.c					\
+					$(DIR_SRC)ft_strreallocsub.c
 
 OBJS_LIB	=		$(SRCS_LIB:.c=.o)
 

@@ -69,6 +69,7 @@ void	ft_strdel(char **as);
 char	*ft_strdup(const char *s1);
 char	*ft_strnew(size_t size);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
+void	ft_strreallocsub(char **s, unsigned int start, size_t len);
 		/* --- Affichage --- */
 void	ft_putendl(char const *s);
 void	ft_putstr(char const *s);
@@ -101,7 +102,7 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
-int		ft_isascii(int c);
+int		ft_isascii(int c); 
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 
