@@ -66,7 +66,18 @@ SRCS_LIB	=		$(DIR_SRC)ft_bzero.c					\
 					$(DIR_SRC)ft_lstadd.c					\
 					$(DIR_SRC)ft_lstiter.c					\
 					$(DIR_SRC)ft_lstmap.c					\
-					$(DIR_SRC)ft_lstaddend.c
+					$(DIR_SRC)ft_lstaddend.c				\
+					$(DIR_SRC)ft_realloc.c					\
+					$(DIR_SRC)ft_clstnew.c					\
+					$(DIR_SRC)ft_clstnew_racine.c			\
+					$(DIR_SRC)ft_isclstr.c					\
+					$(DIR_SRC)ft_findclstr.c				\
+					$(DIR_SRC)ft_clstadd.c					\
+					$(DIR_SRC)ft_clstaddend.c				\
+					$(DIR_SRC)ft_clstaddfront.c				\
+					$(DIR_SRC)ft_clstdel.c					\
+					$(DIR_SRC)ft_clstdelone.c				\
+					$(DIR_SRC)ft_clstiter.c
 
 OBJS_LIB	=		$(SRCS_LIB:.c=.o)
 
@@ -75,19 +86,26 @@ CFLAGS		+=		-Wall -Wextra
 
 RM			=		rm -f
 
-ECHO		=		echo
+ECHO		=		printf
 
 all			:		$(NAME_LIB)
 
 $(NAME_LIB)	:		$(OBJS_LIB)
-					$(ARRC) $(NAME_LIB) $(OBJS_LIB)
-					$(RANLIB) $(NAME_LIB)
+					@$(ECHO) "\033[35m[~~~~~ CREATION LIB ~~~~~~~~]  \033[0m" 
+					@$(ARRC) $(NAME_LIB) $(OBJS_LIB) && $(ECHO) "\033[32m[OK]\n\033[0m" || @$(ECHO) "\033[31m[KO]\n\033[0m"
+					@$(ECHO) "\033[35m[~~~~~ RANLIB ~~~~~~~~~~~~~~]  \033[0m"
+					@$(RANLIB) $(NAME_LIB) && $(ECHO) "\033[32m[OK]\n\033[0m" ||@$(ECHO) "\033[31m[KO]\n\033[0m"
+					@$(ECHO) "\033[33m[~~~~~ LIB OK ~~~~~~~~~~~~~~]  [OK]\n\033[0m"
+
+%.o			:		%.c
+					@$(ECHO) "\033[35m[~~~~~ COMPILATION OBJ ~~~~~]  \033[0m" 
+					@$(CC) $(CFLAGS) -o $@ -c $< && $(ECHO) "\033[33;32m["$@"] \n\033[0m" || $(ECHO) "\033[31m["$@"] \n\033[0m"
 
 clean		:		
-					$(RM) $(OBJS_LIB)
+					@$(RM) $(OBJS_LIB) && $(ECHO) "\033[31m[~~~~~ SUPRESSION .O ~~~~~~~]  [OK]\n\033[0m"
 
 fclean		:		clean
-					$(RM) $(NAME_LIB)
+					@$(RM) $(NAME_LIB) && $(ECHO) "\033[31m[~~~~~ SUPRESSION BINAIRES~~]  [OK]\n\033[0m"
 				
 re			:		fclean all
 
