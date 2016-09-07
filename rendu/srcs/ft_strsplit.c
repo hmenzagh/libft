@@ -4,7 +4,7 @@ char		**ft_strsplit(char const *s, char c)
 {
 	int		cpv[4];
 	char	**tab;
-
+	
 	LEN_S = 0;
 	SPACE_CHECK = 1;
 	N_WORDS_S = 0;
