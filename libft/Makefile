@@ -6,7 +6,7 @@ RANLIB		=		ranlib
 
 NAME_LIB	=		libft.a
 
-DIR_SRC		=		./srcs/
+DIR_SRC		=		./lib/
 
 SRCS_LIB	=		$(DIR_SRC)ft_bzero.c					\
 					$(DIR_SRC)ft_memcmp.c					\
@@ -78,7 +78,11 @@ SRCS_LIB	=		$(DIR_SRC)ft_bzero.c					\
 					$(DIR_SRC)ft_clstdel.c					\
 					$(DIR_SRC)ft_clstdelone.c				\
 					$(DIR_SRC)ft_clstiter.c					\
-					$(DIR_SRC)ft_strreallocsub.c
+					$(DIR_SRC)ft_memreallocsub.c			\
+					$(DIR_SRC)ft_memrealloccp.c				\
+					$(DIR_SRC)ft_memchc.c					\
+					$(DIR_SRC)ft_memcat.c					\
+					$(DIR_SRC)ft_memsub.c
 
 OBJS_LIB	=		$(SRCS_LIB:.c=.o)
 
@@ -97,6 +101,7 @@ $(NAME_LIB)	:		$(OBJS_LIB)
 					@$(ECHO) "\033[35m[~~~~~ RANLIB ~~~~~~~~~~~~~~]  \033[0m"
 					@$(RANLIB) $(NAME_LIB) && $(ECHO) "\033[32m[OK]\n\033[0m" ||@$(ECHO) "\033[31m[KO]\n\033[0m"
 					@$(ECHO) "\033[33m[~~~~~ LIB OK ~~~~~~~~~~~~~~]  [OK]\n\033[0m"
+					@make clean
 
 %.o			:		%.c
 					@$(ECHO) "\033[35m[~~~~~ COMPILATION OBJ ~~~~~]  \033[0m" 

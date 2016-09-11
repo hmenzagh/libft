@@ -60,7 +60,12 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	ft_memdel(void **ap);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
-void	ft_realloc(void **data, size_t cp_len, size_t size_new);
+int		ft_realloc(void **data, size_t cp_len, size_t size_new);
+int		ft_memchc(void *s, char c, int len);
+void	ft_memcat(void *s1, void *s2, int start, int end);
+int		ft_memrealloccp(void **dst, void *src, size_t len_tot, size_t len_cp);
+int		ft_memreallocsub(void **s, unsigned int start, size_t len);
+char	*ft_memsub(void *s, unsigned int start, size_t len);
 
 /* ~~~ Gestion de Strings ~~~~~~~~~~~~~~~~~~~~~~ */
 		/* --- Operations --- */
@@ -69,7 +74,6 @@ void	ft_strdel(char **as);
 char	*ft_strdup(const char *s1);
 char	*ft_strnew(size_t size);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
-void	ft_strreallocsub(char **s, unsigned int start, size_t len);
 		/* --- Affichage --- */
 void	ft_putendl(char const *s);
 void	ft_putstr(char const *s);
