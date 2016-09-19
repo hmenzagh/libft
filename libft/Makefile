@@ -96,22 +96,21 @@ ECHO		=		printf
 all			:		$(NAME_LIB)
 
 $(NAME_LIB)	:		$(OBJS_LIB)
-					@$(ECHO) "\033[35m[~~~~~ CREATION LIB ~~~~~~~~]  \033[0m" 
+					@$(ECHO) "\033[35m[~~~~~ CREATION LIB ~~~~~~~~]  \033[0m"
 					@$(ARRC) $(NAME_LIB) $(OBJS_LIB) && $(ECHO) "\033[32m[OK]\n\033[0m" || @$(ECHO) "\033[31m[KO]\n\033[0m"
 					@$(ECHO) "\033[35m[~~~~~ RANLIB ~~~~~~~~~~~~~~]  \033[0m"
 					@$(RANLIB) $(NAME_LIB) && $(ECHO) "\033[32m[OK]\n\033[0m" ||@$(ECHO) "\033[31m[KO]\n\033[0m"
 					@$(ECHO) "\033[33m[~~~~~ LIB OK ~~~~~~~~~~~~~~]  [OK]\n\033[0m"
-					@make clean
 
 %.o			:		%.c
-					@$(ECHO) "\033[35m[~~~~~ COMPILATION OBJ ~~~~~]  \033[0m" 
+					@$(ECHO) "\033[35m[~~~~~ COMPILATION OBJ ~~~~~]  \033[0m"
 					@$(CC) $(CFLAGS) -o $@ -c $< && $(ECHO) "\033[33;32m["$@"] \n\033[0m" || $(ECHO) "\033[31m["$@"] \n\033[0m"
 
-clean		:		
+clean		:
 					@$(RM) $(OBJS_LIB) && $(ECHO) "\033[31m[~~~~~ SUPRESSION .O ~~~~~~~]  [OK]\n\033[0m"
 
 fclean		:		clean
 					@$(RM) $(NAME_LIB) && $(ECHO) "\033[31m[~~~~~ SUPRESSION BINAIRES~~]  [OK]\n\033[0m"
-				
+
 re			:		fclean all
 

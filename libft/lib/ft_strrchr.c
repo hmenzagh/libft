@@ -4,7 +4,7 @@ char        *ft_strrchr(const char *s, int c)
 {
 	char	*save;
 
-    save = NULL;                                                            
+    save = NULL;
     while (*s)
     {
 		if(*s == (char)c)
@@ -13,5 +13,5 @@ char        *ft_strrchr(const char *s, int c)
     }
     if (*s == (char)c)
         return ((char*)s);
-    return (save);                                                                 
+    return (save);
 }

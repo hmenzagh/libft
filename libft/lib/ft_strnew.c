@@ -3,7 +3,7 @@
 char		*ft_strnew(size_t size)
 {
 	char	*chaine;
-	int		s; 
+	int		s;
 
 	s = ++size;
 	if(!(chaine = malloc(s * sizeof(char))))
