@@ -82,7 +82,8 @@ SRCS_LIB	=		$(DIR_SRC)ft_bzero.c					\
 					$(DIR_SRC)ft_memrealloccp.c				\
 					$(DIR_SRC)ft_memchc.c					\
 					$(DIR_SRC)ft_memcat.c					\
-					$(DIR_SRC)ft_memsub.c
+					$(DIR_SRC)ft_memsub.c					\
+					$(DIR_SRC)get_next_line.c
 
 OBJS_LIB	=		$(SRCS_LIB:.c=.o)
 
