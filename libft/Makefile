@@ -4,7 +4,7 @@ ARRC		=		ar rc
 
 RANLIB		=		ranlib
 
-NAME	=		libft.a
+NAME		=		libft.a
 
 DIR_SRC		=		./
 
@@ -65,16 +65,23 @@ SRCS_LIB	=		$(DIR_SRC)ft_bzero.c					\
 					$(DIR_SRC)ft_lstdel.c					\
 					$(DIR_SRC)ft_lstadd.c					\
 					$(DIR_SRC)ft_lstiter.c					\
-					$(DIR_SRC)ft_lstmap.c
+					$(DIR_SRC)ft_lstmap.c					\
+					$(DIR_SRC)ft_realloc.c					\
+					$(DIR_SRC)ft_lstaddend.c				\
+					$(DIR_SRC)ft_countiter.c				\
+					$(DIR_SRC)ft_lstsize.c					\
+					$(DIR_SRC)ft_lstat.c
 
 OBJS_LIB	=		$(SRCS_LIB:.c=.o)
 
 CFLAGS		+=		-I./
-CFLAGS		+=		-Wall -Wextra
+CFLAGS		+=		-Wall -Wextra -Werror
 
 RM			=		rm -f
 
 ECHO		=		printf
+
+.PHONY		:		clean
 
 all			:		$(NAME)
 
