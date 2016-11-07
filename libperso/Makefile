@@ -4,9 +4,9 @@ ARRC		=		ar rc
 
 RANLIB		=		ranlib
 
-NAME	=		libft.a
+NAME_LIB	=		libft.a
 
-DIR_SRC		=		./
+DIR_SRC		=		./lib/
 
 SRCS_LIB	=		$(DIR_SRC)ft_bzero.c					\
 					$(DIR_SRC)ft_memcmp.c					\
@@ -65,24 +65,42 @@ SRCS_LIB	=		$(DIR_SRC)ft_bzero.c					\
 					$(DIR_SRC)ft_lstdel.c					\
 					$(DIR_SRC)ft_lstadd.c					\
 					$(DIR_SRC)ft_lstiter.c					\
-					$(DIR_SRC)ft_lstmap.c
+					$(DIR_SRC)ft_lstmap.c					\
+					$(DIR_SRC)ft_lstaddend.c				\
+					$(DIR_SRC)ft_realloc.c					\
+					$(DIR_SRC)ft_clstnew.c					\
+					$(DIR_SRC)ft_clstnew_racine.c			\
+					$(DIR_SRC)ft_isclstr.c					\
+					$(DIR_SRC)ft_findclstr.c				\
+					$(DIR_SRC)ft_clstadd.c					\
+					$(DIR_SRC)ft_clstaddend.c				\
+					$(DIR_SRC)ft_clstaddfront.c				\
+					$(DIR_SRC)ft_clstdel.c					\
+					$(DIR_SRC)ft_clstdelone.c				\
+					$(DIR_SRC)ft_clstiter.c					\
+					$(DIR_SRC)ft_memreallocsub.c			\
+					$(DIR_SRC)ft_memrealloccp.c				\
+					$(DIR_SRC)ft_memchc.c					\
+					$(DIR_SRC)ft_memcat.c					\
+					$(DIR_SRC)ft_memsub.c					\
+					$(DIR_SRC)get_next_line.c
 
 OBJS_LIB	=		$(SRCS_LIB:.c=.o)
 
-CFLAGS		+=		-I./
+CFLAGS		+=		-I./includes
 CFLAGS		+=		-Wall -Wextra
 
 RM			=		rm -f
 
 ECHO		=		printf
 
-all			:		$(NAME)
+all			:		$(NAME_LIB)
 
-$(NAME)	:			$(OBJS_LIB)
+$(NAME_LIB)	:		$(OBJS_LIB)
 					@$(ECHO) "\033[35m[~~~~~ CREATION LIB ~~~~~~~~]  \033[0m"
-					@$(ARRC) $(NAME) $(OBJS_LIB) && $(ECHO) "\033[32m[OK]\n\033[0m" || @$(ECHO) "\033[31m[KO]\n\033[0m"
+					@$(ARRC) $(NAME_LIB) $(OBJS_LIB) && $(ECHO) "\033[32m[OK]\n\033[0m" || @$(ECHO) "\033[31m[KO]\n\033[0m"
 					@$(ECHO) "\033[35m[~~~~~ RANLIB ~~~~~~~~~~~~~~]  \033[0m"
-					@$(RANLIB) $(NAME) && $(ECHO) "\033[32m[OK]\n\033[0m" ||@$(ECHO) "\033[31m[KO]\n\033[0m"
+					@$(RANLIB) $(NAME_LIB) && $(ECHO) "\033[32m[OK]\n\033[0m" ||@$(ECHO) "\033[31m[KO]\n\033[0m"
 					@$(ECHO) "\033[33m[~~~~~ LIB OK ~~~~~~~~~~~~~~]  [OK]\n\033[0m"
 
 %.o			:		%.c
@@ -93,7 +111,7 @@ clean		:
 					@$(RM) $(OBJS_LIB) && $(ECHO) "\033[31m[~~~~~ SUPRESSION .O ~~~~~~~]  [OK]\n\033[0m"
 
 fclean		:		clean
-					@$(RM) $(NAME) && $(ECHO) "\033[31m[~~~~~ SUPRESSION BINAIRES~~]  [OK]\n\033[0m"
+					@$(RM) $(NAME_LIB) && $(ECHO) "\033[31m[~~~~~ SUPRESSION BINAIRES~~]  [OK]\n\033[0m"
 
 re			:		fclean all
 
