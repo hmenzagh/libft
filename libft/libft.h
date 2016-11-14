@@ -6,7 +6,7 @@
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 14:50:19 by hmenzagh          #+#    #+#             */
-/*   Updated: 2016/11/07 13:57:32 by hmenzagh         ###   ########.fr       */
+/*   Updated: 2016/11/14 01:03:35 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # define LEN_S cpv[2]
 # define SAVE_S cpv[3]
 # define N_WORDS_S cpv[0]
+# define ERROR -1
+# define OK 0
 
 # include <string.h>
 # include <stdlib.h>
@@ -95,5 +97,6 @@ void			ft_lstaddend(t_list **alst, t_list *new);
 int				ft_countiter(char *s, char c);
 int				ft_lstsize(t_list *ptr);
 t_list			*ft_lstat(t_list *ptr, int pos);
+int				ft_lstfreeone(t_list **o_ptr, t_list *d_ptr);
 
 #endif

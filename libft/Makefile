@@ -70,7 +70,8 @@ SRCS_LIB	=		$(DIR_SRC)ft_bzero.c					\
 					$(DIR_SRC)ft_lstaddend.c				\
 					$(DIR_SRC)ft_countiter.c				\
 					$(DIR_SRC)ft_lstsize.c					\
-					$(DIR_SRC)ft_lstat.c
+					$(DIR_SRC)ft_lstat.c					\
+					$(DIR_SRC)ft_lstfreeone.c
 
 OBJS_LIB	=		$(SRCS_LIB:.c=.o)
 
@@ -93,7 +94,7 @@ $(NAME)	:			$(OBJS_LIB)
 					@$(ECHO) "\033[33m[~~~~~ LIB OK ~~~~~~~~~~~~~~]  [OK]\n\033[0m"
 
 %.o			:		%.c
-					@$(ECHO) "\033[35m[~~~~~ COMPILATION OBJ ~~~~~]  \033[0m"
+					@$(ECHO) "\033[36m[~~~~~ COMPILATION OBJ ~~~~~]  \033[0m"
 					@$(CC) $(CFLAGS) -o $@ -c $< && $(ECHO) "\033[33;32m["$@"] \n\033[0m" || $(ECHO) "\033[31m["$@"] \n\033[0m"
 
 clean		:
