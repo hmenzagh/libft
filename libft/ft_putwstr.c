@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putwstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 16:21:44 by hmenzagh          #+#    #+#             */
-/*   Updated: 2016/12/06 22:21:49 by hmenzagh         ###   ########.fr       */
+/*   Created: 2016/12/06 01:49:51 by hmenzagh          #+#    #+#             */
+/*   Updated: 2016/12/06 01:50:55 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char		*ft_strchr(const char *s, int c)
-{
-	int		i;
+#include "libft.h"
+#include <wchar.h>
 
-	i = 0;
-	while (s[i] && s[i] != c)
-		++i;
-	if (c == '\0' || s[i] == c)
-		return ((char*)&s[i]);
-	return (0);
+void	ft_putwstr(wchar_t const *str)
+{
+	while (*str)
+	{
+		ft_putwchar(*str);
+		++str;
+	}
 }
