@@ -71,7 +71,10 @@ SRCS_LIB	=		$(DIR_SRC)ft_bzero.c					\
 					$(DIR_SRC)ft_countiter.c				\
 					$(DIR_SRC)ft_lstsize.c					\
 					$(DIR_SRC)ft_lstat.c					\
-					$(DIR_SRC)ft_lstfreeone.c
+					$(DIR_SRC)ft_lstfreeone.c				\
+					$(DIR_SRC)ft_putwchar.c					\
+					$(DIR_SRC)ft_putwstr.c					\
+					$(DIR_SRC)ft_error.c
 
 OBJS_LIB	=		$(SRCS_LIB:.c=.o)
 
@@ -98,10 +101,14 @@ $(NAME)	:			$(OBJS_LIB)
 					@$(CC) $(CFLAGS) -o $@ -c $< && $(ECHO) "\033[33;32m["$@"] \n\033[0m" || $(ECHO) "\033[31m["$@"] \n\033[0m"
 
 clean		:
-					@$(RM) $(OBJS_LIB) && $(ECHO) "\033[31m[~~~~~ SUPRESSION .O ~~~~~~~]  [OK]\n\033[0m"
+					@$(RM) $(OBJS_LIB) && $(ECHO) "\033[31m[~~~~~ SUPRESSION .O LIB ~~~]  [OK]\n\033[0m"
 
 fclean		:		clean
-					@$(RM) $(NAME) && $(ECHO) "\033[31m[~~~~~ SUPRESSION BINAIRES~~]  [OK]\n\033[0m"
+					@$(RM) $(NAME) && $(ECHO) "\033[31m[~~~~~ SUPRESSION LIB ~~~~~~]  [OK]\n\033[0m"
+
+fc_distant	:
+					@$(RM) $(NAME) && $(ECHO) "\033[31m[~~~~~ SUPRESSION LIB ~~~~~~]  [OK]\n\033[0m"
+	
 
 re			:		fclean all
 
