@@ -6,7 +6,7 @@
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:46:02 by hmenzagh          #+#    #+#             */
-/*   Updated: 2016/11/06 13:48:23 by hmenzagh         ###   ########.fr       */
+/*   Updated: 2017/04/05 11:44:17 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ char		*ft_strtrim(char const *s)
 		++off;
 	while (end > off && (s[end] == ' ' || s[end] == '\t' || s[end] == '\n'))
 		--end;
-	if (!(chaine = malloc(sizeof(char) * (end - off + 2))))
-		return (NULL);
+	chaine = memalloc(sizeof(char) * (end - off + 2));
 	while (i < end - off + 1)
 	{
 		chaine[i] = s[off + i];

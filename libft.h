@@ -6,7 +6,7 @@
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 14:50:19 by hmenzagh          #+#    #+#             */
-/*   Updated: 2016/12/16 08:57:52 by hmenzagh         ###   ########.fr       */
+/*   Updated: 2017/04/05 11:43:28 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr_fd(char const *s, int fd);
-int				ft_realloc(void **data, size_t cp_len, size_t size_new);
+void			ft_realloc(void **data, size_t cp_len, size_t size_new);
 void			ft_lstaddend(t_list **alst, t_list *new);
 int				ft_countiter(char *s, char c);
 int				ft_lstsize(t_list *ptr);

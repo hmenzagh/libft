@@ -6,7 +6,7 @@
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:48:42 by hmenzagh          #+#    #+#             */
-/*   Updated: 2016/11/06 14:11:20 by hmenzagh         ###   ########.fr       */
+/*   Updated: 2017/04/05 11:43:53 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ char		*ft_itoa(int n)
 	while (save && ++c_s)
 		save /= 10;
 	c_s = (n <= 0) ? c_s + 1 : c_s;
-	if (!(chaine = malloc(sizeof(char) * (c_s + 1))))
-		return (NULL);
+	chaine = memalloc(sizeof(char) * (c_s + 1));
 	chaine[c_s--] = '\0';
 	if (n == 0)
 		chaine[0] = '0';
