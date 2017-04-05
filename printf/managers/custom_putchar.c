@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   custom_putchar.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 16:45:14 by hmenzagh          #+#    #+#             */
-/*   Updated: 2017/04/05 12:18:30 by hmenzagh         ###   ########.fr       */
+/*   Created: 2016/11/29 14:35:44 by hmenzagh          #+#    #+#             */
+/*   Updated: 2016/12/08 15:57:06 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char				*ft_strsub(char const *s, unsigned int start, size_t len)
+int			putchar_turfu(char **s, char c)
 {
-	char			*chaine;
-	unsigned int	i;
-
-	i = 0;
-	chaine = NULL;
-	if (s)
-	{
-		chaine = ft_memalloc((len + 1) * sizeof(char));
-		while (i < len)
-		{
-			chaine[i] = s[i + start];
-			++i;
-		}
-		chaine[i] = '\0';
-	}
-	return (chaine);
+	if (!(*s = ft_memalloc(sizeof(char) * 2)))
+		return (ERROR);
+	*s[0] = c;
+	return (1);
 }

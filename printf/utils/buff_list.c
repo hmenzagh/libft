@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   buff_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 16:45:14 by hmenzagh          #+#    #+#             */
-/*   Updated: 2017/04/05 12:18:30 by hmenzagh         ###   ########.fr       */
+/*   Created: 2016/11/26 02:06:44 by hmenzagh          #+#    #+#             */
+/*   Updated: 2016/12/01 13:08:02 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char				*ft_strsub(char const *s, unsigned int start, size_t len)
+int				buff_add(int size, char *string, t_list **buffer)
 {
-	char			*chaine;
-	unsigned int	i;
+	t_list		*ptr;
+	t_list		*w_ptr;
 
-	i = 0;
-	chaine = NULL;
-	if (s)
+	w_ptr = *buffer;
+	if (!(ptr = ft_memalloc(sizeof(t_list))))
+		return (ERROR);
+	ptr->next = NULL;
+	ptr->content = string;
+	ptr->content_size = size;
+	if (*buffer)
 	{
-		chaine = ft_memalloc((len + 1) * sizeof(char));
-		while (i < len)
-		{
-			chaine[i] = s[i + start];
-			++i;
-		}
-		chaine[i] = '\0';
+		while (w_ptr->next)
+			w_ptr = w_ptr->next;
+		w_ptr->next = ptr;
 	}
-	return (chaine);
+	else
+		*buffer = ptr;
+	return (1);
 }

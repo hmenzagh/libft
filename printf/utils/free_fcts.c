@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   free_fcts.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 16:45:14 by hmenzagh          #+#    #+#             */
-/*   Updated: 2017/04/05 12:18:30 by hmenzagh         ###   ########.fr       */
+/*   Created: 2016/11/26 14:11:38 by hmenzagh          #+#    #+#             */
+/*   Updated: 2016/12/08 15:50:39 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char				*ft_strsub(char const *s, unsigned int start, size_t len)
+void			free_all(char *format, t_list *buffer)
 {
-	char			*chaine;
-	unsigned int	i;
+	t_list		*ptr;
 
-	i = 0;
-	chaine = NULL;
-	if (s)
+	while (buffer)
 	{
-		chaine = ft_memalloc((len + 1) * sizeof(char));
-		while (i < len)
-		{
-			chaine[i] = s[i + start];
-			++i;
-		}
-		chaine[i] = '\0';
+		ptr = buffer->next;
+		if (buffer->content)
+			free(buffer->content);
+		if (buffer)
+			free(buffer);
+		buffer = ptr;
 	}
-	return (chaine);
+	free(format);
 }

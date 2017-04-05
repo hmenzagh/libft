@@ -6,7 +6,7 @@
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 14:50:19 by hmenzagh          #+#    #+#             */
-/*   Updated: 2017/04/05 11:43:28 by hmenzagh         ###   ########.fr       */
+/*   Updated: 2017/04/05 12:14:01 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,15 @@
 # define N_WORDS_S cpv[0]
 # define ERROR -1
 # define OK 0
-# define ERR_MAJNL "Error\n"
-# define ERR_NL "error\n"
-# define ERR_ALLMAJNL "ERROR\n"
+# define KO -1
+# define LFD content_size
+# define LBF content
+# define OVER -42
+# define CONTINUE -4242
+# define BUFF_SIZE 128
 
+
+# include <fcntl.h>
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -33,6 +38,7 @@ typedef	struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+int				get_next_line(int const fd, char **line);
 int				ft_atoi(const char *str);
 char			*ft_itoa(int n);
 void			ft_putchar(char c);

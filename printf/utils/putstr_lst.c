@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   custom_putstr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 16:45:14 by hmenzagh          #+#    #+#             */
-/*   Updated: 2017/04/05 12:18:30 by hmenzagh         ###   ########.fr       */
+/*   Created: 2016/11/23 20:08:54 by hmenzagh          #+#    #+#             */
+/*   Updated: 2016/12/08 15:50:58 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char				*ft_strsub(char const *s, unsigned int start, size_t len)
+int				custom_putstr(t_list *ptr)
 {
-	char			*chaine;
-	unsigned int	i;
+	int			i;
+	int			total;
 
 	i = 0;
-	chaine = NULL;
-	if (s)
+	total = 0;
+	while (ptr)
 	{
-		chaine = ft_memalloc((len + 1) * sizeof(char));
-		while (i < len)
-		{
-			chaine[i] = s[i + start];
-			++i;
-		}
-		chaine[i] = '\0';
+		total += ptr->content_size;
+		if (ptr->content_size >= 0)
+			while (i < ptr->content_size)
+				ft_putchar(((char*)ptr->content)[i++]);
+		i = 0;
+		ptr = ptr->next;
 	}
-	return (chaine);
+	return (total);
 }

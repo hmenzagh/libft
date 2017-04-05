@@ -7,6 +7,7 @@ RANLIB		=		ranlib
 NAME		=		libft.a
 
 DIR_SRC		=		./
+DIR_PRINTF	=		./printf/
 
 SRCS_LIB	=		$(DIR_SRC)ft_bzero.c					\
 					$(DIR_SRC)ft_memcmp.c					\
@@ -74,7 +75,34 @@ SRCS_LIB	=		$(DIR_SRC)ft_bzero.c					\
 					$(DIR_SRC)ft_lstfreeone.c				\
 					$(DIR_SRC)ft_putwchar.c					\
 					$(DIR_SRC)ft_putwstr.c					\
-					$(DIR_SRC)ft_error.c
+					$(DIR_SRC)get_next_line.c				\
+					$(DIR_SRC)ft_error.c					\
+					$(DIR_PRINTF)utils/buff_list.c					\
+					$(DIR_PRINTF)utils/free_fcts.c					\
+					$(DIR_PRINTF)utils/string_magic.c				\
+					$(DIR_PRINTF)utils/flag_detectors.c				\
+					$(DIR_PRINTF)utils/flag_handelers.c				\
+					$(DIR_PRINTF)managers/custom_putstr.c			\
+					$(DIR_PRINTF)utils/chunk_normaliser.c			\
+					$(DIR_PRINTF)managers/custom_putchar.c			\
+					$(DIR_PRINTF)managers/manage_padding.c			\
+					$(DIR_PRINTF)managers/prefix_manager.c			\
+					$(DIR_PRINTF)managers/hashtag_manager.c			\
+					$(DIR_PRINTF)managers/precision_manager.c		\
+					$(DIR_PRINTF)managers/custom_putnbr_signed.c	\
+					$(DIR_PRINTF)managers/custom_putnbr_unsigned.c	\
+					$(DIR_PRINTF)utils/generator.c					\
+					$(DIR_PRINTF)utils/psf_init.c					\
+					$(DIR_PRINTF)utils/putstr_lst.c					\
+					$(DIR_PRINTF)utils/var_loaders.c				\
+					$(DIR_PRINTF)utils/check_zero.c					\
+					$(DIR_PRINTF)utils/var_loaders_2.c				\
+					$(DIR_PRINTF)managers/scotch.c					\
+					$(DIR_PRINTF)managers/w_precision.c				\
+					$(DIR_PRINTF)managers/w_convertor.c				\
+					$(DIR_PRINTF)managers/wgen.c					\
+					$(DIR_PRINTF)utils/var_loaders_unsigned_2.c		\
+					$(DIR_PRINTF)utils/var_loaders_unsigned.c
 
 OBJS_LIB	=		$(SRCS_LIB:.c=.o)
 

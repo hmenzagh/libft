@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   var_loaders.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 16:45:14 by hmenzagh          #+#    #+#             */
-/*   Updated: 2017/04/05 12:18:30 by hmenzagh         ###   ########.fr       */
+/*   Created: 2016/12/01 09:40:45 by hmenzagh          #+#    #+#             */
+/*   Updated: 2016/12/08 15:54:51 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char				*ft_strsub(char const *s, unsigned int start, size_t len)
+intmax_t		load_i(va_list *args)
 {
-	char			*chaine;
-	unsigned int	i;
+	int			res;
 
-	i = 0;
-	chaine = NULL;
-	if (s)
-	{
-		chaine = ft_memalloc((len + 1) * sizeof(char));
-		while (i < len)
-		{
-			chaine[i] = s[i + start];
-			++i;
-		}
-		chaine[i] = '\0';
-	}
-	return (chaine);
+	res = va_arg(*args, int);
+	return ((intmax_t)res);
+}
+
+intmax_t		load_l(va_list *args)
+{
+	long		res;
+
+	res = va_arg(*args, long);
+	return ((intmax_t)res);
+}
+
+intmax_t		load_ll(va_list *args)
+{
+	long long	res;
+
+	res = va_arg(*args, long long);
+	return ((intmax_t)res);
 }

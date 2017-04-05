@@ -6,7 +6,7 @@
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:29:11 by hmenzagh          #+#    #+#             */
-/*   Updated: 2017/04/05 11:45:21 by hmenzagh         ###   ########.fr       */
+/*   Updated: 2017/04/05 12:18:15 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char		*ft_strdup(const char *s1)
 	while (s1[c])
 		c++;
 	c++;
-	cp = memalloc(c * sizeof(char));
+	cp = ft_memalloc(c * sizeof(char));
 	c = 0;
 	while (s1[c])
 	{

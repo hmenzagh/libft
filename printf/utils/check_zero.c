@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   check_zero.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 16:45:14 by hmenzagh          #+#    #+#             */
-/*   Updated: 2017/04/05 12:18:30 by hmenzagh         ###   ########.fr       */
+/*   Created: 2016/12/08 16:46:46 by hmenzagh          #+#    #+#             */
+/*   Updated: 2016/12/08 16:47:14 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char				*ft_strsub(char const *s, unsigned int start, size_t len)
+int					check_zero(const char *s)
 {
-	char			*chaine;
-	unsigned int	i;
+	int				i;
+	int				count;
 
 	i = 0;
-	chaine = NULL;
-	if (s)
+	count = 0;
+	while (s[i])
 	{
-		chaine = ft_memalloc((len + 1) * sizeof(char));
-		while (i < len)
-		{
-			chaine[i] = s[i + start];
-			++i;
-		}
-		chaine[i] = '\0';
+		if (s[i] == '0')
+			++count;
+		if (count > 1)
+			return (0);
+		if (s[i] != ' ' && s[i] != '0')
+			return (0);
+		++i;
 	}
-	return (chaine);
+	return (1);
 }

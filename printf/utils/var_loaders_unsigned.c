@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   var_loaders_unsigned.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmenzagh <hmenzagh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 16:45:14 by hmenzagh          #+#    #+#             */
-/*   Updated: 2017/04/05 12:18:30 by hmenzagh         ###   ########.fr       */
+/*   Created: 2016/12/01 09:56:33 by hmenzagh          #+#    #+#             */
+/*   Updated: 2016/12/08 15:55:04 by hmenzagh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char				*ft_strsub(char const *s, unsigned int start, size_t len)
+uintmax_t				load_ui(va_list *args)
 {
-	char			*chaine;
-	unsigned int	i;
+	unsigned int		res;
 
-	i = 0;
-	chaine = NULL;
-	if (s)
-	{
-		chaine = ft_memalloc((len + 1) * sizeof(char));
-		while (i < len)
-		{
-			chaine[i] = s[i + start];
-			++i;
-		}
-		chaine[i] = '\0';
-	}
-	return (chaine);
+	res = va_arg(*args, unsigned int);
+	return ((uintmax_t)res);
+}
+
+uintmax_t				load_ul(va_list *args)
+{
+	unsigned long		res;
+
+	res = va_arg(*args, unsigned long);
+	return ((uintmax_t)res);
+}
+
+uintmax_t				load_ull(va_list *args)
+{
+	unsigned long long	res;
+
+	res = va_arg(*args, unsigned long long);
+	return ((uintmax_t)res);
 }
