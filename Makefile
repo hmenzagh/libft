@@ -77,6 +77,8 @@ SRCS_LIB	=		$(DIR_SRC)ft_bzero.c					\
 					$(DIR_SRC)ft_putwstr.c					\
 					$(DIR_SRC)get_next_line.c				\
 					$(DIR_SRC)ft_error.c					\
+					$(DIR_PRINTF)ft_printf.c						\
+					$(DIR_PRINTF)utils/parse.c						\
 					$(DIR_PRINTF)utils/buff_list.c					\
 					$(DIR_PRINTF)utils/free_fcts.c					\
 					$(DIR_PRINTF)utils/string_magic.c				\
